@@ -9,7 +9,7 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
-df=pd.read_csv("C:/Users/chris/OneDrive/Desktop/streamlitp/COVID-19_in_bd.csv")
+df=pd.read_csv("COVID-19_in_bd.csv")
 
 #theming
 primaryColor="#F63366"
@@ -21,7 +21,7 @@ font="sans serif"
 #put a title to the webpage
 st.title('COVID-19 in Bangladesh between March-April 2020')
 
-#write text
+#About section
 txt = st.text_area('About:', '''
     As the COVID-19 virus made its way worldwide, an opportunity to stop the spread of the virus during its early stages was missed.
     Let's take a look at how the virus progressed in its early stages during the months of March and April 2020 in Bangladesh and draw some conclusions!'
@@ -32,7 +32,7 @@ txt = st.text_area('About:', '''
 if st.button('Start exploring'):
     st.write('Lets go!')
 
-#pasting original python code form Jupyter into spyder
+#original code with some modifications
 st.header("Line Graph")
 fig = px.line(df, x="Date", y="Deaths",title='COVID-19 deaths cases in Bangladesh, between March-April 2020')
 
@@ -61,7 +61,7 @@ fig5 = px.scatter(df, x="Confirmed", y="Recovered", animation_frame="Date",
 fig["layout"].pop("updatemenus")
 st.plotly_chart(fig5)
 
-#interaction 2: creating sidebar with streamlit allowing us to choose the desired visualization 
+#interaction 2: creating sidebar with streamlit allowing us to choose the desired visualization section
 st.sidebar.title('Outline:')
 st.sidebar.markdown("[Line Graph](#line-graph)")
 st.sidebar.markdown('[3D Scatter Plot](#3d-scatter-plot)')
