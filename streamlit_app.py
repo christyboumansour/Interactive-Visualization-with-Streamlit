@@ -9,7 +9,7 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
-df=pd.read_csv("C:/Users/chris/OneDrive/Desktop/COVID-19_in_bd.csv")
+df=pd.read_csv("COVID-19_in_bd.csv")
 
 
 primaryColor="#F63366"
